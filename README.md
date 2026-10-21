@@ -100,10 +100,10 @@ Werewolf sigue en desarrollo activo. El bot, el dashboard y los datos forman un 
 
 ```mermaid
 flowchart LR
-  D([Discord]) <-->|slash commands, mensajes privados| B[Bot<br/>Python · discord.py<br/>Render]
-  B <--> S[(Supabase<br/>PostgreSQL)]
-  W[Dashboard<br/>Next.js · React<br/>Vercel] <--> S
-  U([Navegador]) -->|login con Discord| W
+  D([Discord]) <--> B[Bot · Render]
+  B <--> S[(Supabase)]
+  S <--> W[Dashboard · Vercel]
+  W -. login .-> D
 ```
 
 - **Bot:** Python con discord.py. Cada rol tiene su propia lógica nocturna, separada del resto del motor.
