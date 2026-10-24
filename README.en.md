@@ -48,9 +48,9 @@ Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix
 
 ## Modes
 
-- **Ranked.** The classic game. It counts toward the server leaderboard.
-- **Casual.** Looser and more chaotic. It does not count.
-- **One Night.** A single night, 3 to 10 players, with its own roles.
+- **Ranked.** The classic, competitive game: always anonymous voting and the server's rewards (streaks and coins, if enabled).
+- **Casual.** Same rules and deck, optional anonymity, and no server rewards.
+- **One Night.** A single night, 3 to 10 players, with its own roles. Votes are shown at the end.
 
 The bot builds the deck from the player count and what each role contributes. It is a calculated split, not a guarantee of a balanced game: the outcome still depends on how people play.
 
