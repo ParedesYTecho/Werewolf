@@ -12,9 +12,13 @@
   <a href="https://werewolfdashboard.vercel.app/roles">Roles</a>
   &nbsp;·&nbsp;
   <a href="https://werewolfdashboard.vercel.app/dashboard">Dashboard</a>
+  &nbsp;·&nbsp;
+  <a href="docs/caso-tecnico.md">Caso técnico</a>
+  &nbsp;·&nbsp;
+  <a href="README.en.md">English</a>
 </p>
 
-Werewolf es un bot de Discord para jugar a Hombres Lobo sin narrador. Reparte los roles por mensaje privado, lleva la noche y el día en el canal del servidor, cuenta los votos y guarda el resultado.
+Werewolf es un bot de Discord para jugar a Hombres Lobo sin narrador. Reparte los roles por mensaje privado, lleva la noche y el día en el canal del servidor, cuenta los votos y guarda el resultado en un ranking por servidor.
 
 Este repositorio es su escaparate. El código fuente es privado.
 
@@ -40,21 +44,21 @@ Este repositorio es su escaparate. El código fuente es privado.
 3. De noche actúan los roles con habilidad. De día el pueblo debate y vota a quién eliminar.
 4. La partida termina cuando un bando cumple su objetivo, y el bot anota el resultado.
 
+Los comandos funcionan como comandos de barra (`/`), con mención al bot o con el prefijo `ww!`, que cada servidor puede cambiar. `/help` muestra la lista completa.
+
 ## Modos
 
 - **Ranked.** La partida clásica. Puntúa para el ranking del servidor.
 - **Casual.** Más caótica. No puntúa.
-- **One Night.** Una sola noche, de 3 a 10 jugadores y 11 roles propios.
+- **One Night.** Una sola noche, de 3 a 10 jugadores y roles propios.
 
 El bot arma el mazo según el número de jugadores y lo que aporta cada rol. Es un reparto calculado, no una garantía de partida equilibrada: el resultado depende de cómo se juegue.
 
-La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica los 28 roles uno por uno.
+La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica los 28 roles uno por uno, y [Meta & Balance](https://werewolfdashboard.vercel.app/meta) muestra cómo se reparten según el número de jugadores.
 
 ## Dashboard
 
-El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Cada persona ve su perfil y el historial de partidas de sus servidores. Quien administra un servidor puede además cambiar sus ajustes desde el navegador y revisar los reportes.
-
-Los administradores también pueden:
+El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Cada persona ve su perfil y el historial de partidas de sus servidores. Quien administra un servidor puede además cambiar sus ajustes desde el navegador y revisar los reportes:
 
 - elegir el canal de las partidas y un rol de aviso que `/mention` llama a jugar;
 - dar un rol «Jugando» mientras dura la partida y roles por racha de victorias;
@@ -63,8 +67,6 @@ Los administradores también pueden:
 - activar recompensas de monedas con UnbelievaBoat.
 
 Para gestionar roles, el rol del bot tiene que estar por encima de los roles que asigna.
-
-La página [Meta & Balance](https://werewolfdashboard.vercel.app/meta) muestra cómo se reparten los roles según el número de jugadores.
 
 ## Empezar
 
@@ -83,20 +85,22 @@ No pide permiso de Administrador.
 - **Mencionar @everyone, @here y todos los roles.** Para que `/mention` pueda avisar al rol configurado aunque no sea mencionable.
 - **Enviar mensajes en hilos.** Por si se juega en un hilo.
 
-El bot no necesita intents privilegiados. Si el canal de juego tiene permisos propios (por ejemplo, un canal privado), dale al rol del bot acceso a ese canal.
+Para que funcione el prefijo `ww!`, el bot usa la intent privilegiada de contenido de mensajes (*Message Content*). Solo lee el texto para reconocer comandos y no lo guarda.
+
+Si el canal de juego tiene permisos propios (por ejemplo, un canal privado), dale al rol del bot acceso a ese canal.
 </details>
 
 <details>
 <summary>¿Qué datos guarda?</summary>
 
-Identificadores de Discord (usuario, servidor, canales, roles), el nombre público para mostrarlo en los rankings, las estadísticas de juego y la configuración de cada servidor. No lee ni guarda el contenido de los mensajes del chat. Si un administrador activa la economía de UnbelievaBoat, su token se guarda cifrado.
+Identificadores de Discord (usuario, servidor, canales, roles), el nombre público para mostrarlo en los rankings, las estadísticas de juego y la configuración de cada servidor. No guarda el contenido de los mensajes del chat. Si un administrador activa la economía de UnbelievaBoat, su token se guarda cifrado.
 
 El detalle está en la [política de privacidad](https://werewolfdashboard.vercel.app/privacy) y los [términos](https://werewolfdashboard.vercel.app/terms). Para pedir que borren tus datos o para cualquier duda, usa el contacto de la [web](https://werewolfdashboard.vercel.app).
 </details>
 
 ## Sobre el proyecto
 
-Werewolf sigue en desarrollo activo. El bot, el dashboard y los datos forman un solo proyecto que crece versión a versión; las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios).
+Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios).
 
 ```mermaid
 flowchart LR
@@ -110,13 +114,10 @@ flowchart LR
 - **Dashboard:** Next.js 16 (App Router) y React 19, con inicio de sesión de Discord (Auth.js).
 - **Datos:** Supabase (PostgreSQL). Bot y dashboard comparten la misma base; las estadísticas se guardan separadas por servidor.
 - **Equilibrio:** una simulación Monte Carlo juega partidas con reparto aleatorio para medir cómo gana cada bando según el número de jugadores.
-- **Tolerancia a fallos:** si a Discord le falta un permiso (dar un rol, cerrar un canal), la partida sigue y el bot lo registra en vez de detenerse.
-- **Seguridad:** el bot funciona sin permiso de Administrador y el token de UnbelievaBoat se guarda cifrado.
-- **Despliegue:** el bot en Render y el dashboard en Vercel, con integración por pull request.
+- **Tolerancia a fallos:** si a Discord le falta un permiso, la partida sigue y el bot lo registra en vez de detenerse.
+- **Calidad:** cada cambio pasa por una pull request con comprobaciones automáticas (compilación, pruebas y simulación) antes de entrar en la rama principal.
 
-## Enlaces
-
-[Web](https://werewolfdashboard.vercel.app) · [Roles](https://werewolfdashboard.vercel.app/roles) · [Meta & Balance](https://werewolfdashboard.vercel.app/meta) · [Historial de cambios](https://werewolfdashboard.vercel.app/cambios) · [Términos](https://werewolfdashboard.vercel.app/terms) · [Privacidad](https://werewolfdashboard.vercel.app/privacy)
+El [caso técnico](docs/caso-tecnico.md) explica cuatro problemas concretos del proyecto y cómo se resolvieron, incluyendo lo que sigue abierto.
 
 <p align="center">
   <img src="assets/brand/app-icon.png" width="56" alt="Icono de Werewolf: lobo aullando ante la luna llena"><br>
