@@ -42,5 +42,5 @@ What this does not prove: a green test run does not mean the game is fully teste
 ## What is still open
 
 - Game recovery after a restart stores serializable state, but not every mode's data survives. This is documented internally and unresolved.
-- Some independent win conditions have descriptions that do not fully match their implementation. They are treated as a pending decision and are not changed without agreement.
+- Casual and One Night do not score: a review found that game saving still gave them points and achievements, which is now fixed with regression tests. The White Wolf's win, which by its description requires being the sole survivor, was aligned with that rule too. Other independent win conditions still need review.
 - Part of the project's legacy test code is still waiting for review.
