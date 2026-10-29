@@ -37,6 +37,15 @@ Este repositorio es su escaparate. El código fuente es privado.
   </tr>
 </table>
 
+<p align="center">
+  <a href="https://werewolfdashboard.vercel.app"><picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/web/landing-dia.jpg">
+    <img src="assets/web/landing-noche.jpg" alt="Portada de la web de Werewolf: «Pueblo duerme» sobre un bosque, con la luna de noche y el sol de día" width="100%">
+  </picture></a>
+</p>
+
+<p align="center"><sub>La web tiene fase de noche y de día; el interruptor del encabezado cambia entre ambas.</sub></p>
+
 ## Cómo es una partida
 
 1. Alguien abre el lobby con `/start` y los demás entran con `/join`.
@@ -52,9 +61,9 @@ Los comandos funcionan como comandos de barra (`/`), con mención al bot o con e
 - **Casual.** Mismas reglas y reparto, con anonimato opcional y sin recompensas del servidor.
 - **One Night.** Una sola noche, de 3 a 10 jugadores y roles propios. Los votos se muestran al final.
 
-El bot arma el mazo según el número de jugadores y lo que aporta cada rol. Es un reparto calculado, no una garantía de partida equilibrada: el resultado depende de cómo se juegue.
+El bot arma el mazo según el número de jugadores y lo que aporta cada rol. El reparto está calculado, pero el equilibrio de cada partida depende de cómo se juegue.
 
-La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica los 28 roles uno por uno, y [Meta & Balance](https://werewolfdashboard.vercel.app/meta) muestra cómo se reparten según el número de jugadores.
+La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica los 28 roles clásicos y los 11 de One Night, con su texto completo y un consejo de juego. [Meta y balance](https://werewolfdashboard.vercel.app/meta) muestra con qué frecuencia sale cada rol según el número de jugadores, calculado con el mismo reparto que usa el bot, y deja ver una mesa de ejemplo.
 
 ## Dashboard
 
@@ -100,7 +109,7 @@ El detalle está en la [política de privacidad](https://werewolfdashboard.verce
 
 ## Sobre el proyecto
 
-Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios).
+Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios), por versiones. La página de [estado del servicio](https://werewolfdashboard.vercel.app/estado) comprueba si el servidor del bot responde.
 
 ```mermaid
 flowchart LR
@@ -110,12 +119,12 @@ flowchart LR
   W -. login .-> D
 ```
 
-- **Bot:** Python con discord.py. Cada rol tiene su propia lógica nocturna, separada del resto del motor.
-- **Dashboard:** Next.js 16 (App Router) y React 19, con inicio de sesión de Discord (Auth.js).
-- **Datos:** Supabase (PostgreSQL). Bot y dashboard comparten la misma base; las estadísticas se guardan separadas por servidor.
-- **Equilibrio:** una simulación Monte Carlo juega partidas con reparto aleatorio para medir cómo gana cada bando según el número de jugadores.
-- **Tolerancia a fallos:** si a Discord le falta un permiso, la partida sigue y el bot lo registra en vez de detenerse.
-- **Calidad:** cada cambio pasa por una pull request con comprobaciones automáticas (compilación, pruebas y simulación) antes de entrar en la rama principal.
+- Bot: Python con discord.py. Cada rol tiene su propia lógica nocturna, separada del resto del motor.
+- Dashboard: Next.js 16 (App Router) y React 19, con inicio de sesión de Discord (Auth.js).
+- Datos: Supabase (PostgreSQL). Bot y dashboard comparten la misma base; las estadísticas se guardan separadas por servidor.
+- Equilibrio: una simulación Monte Carlo juega partidas con reparto aleatorio para medir cómo gana cada bando según el número de jugadores.
+- Tolerancia a fallos: si a Discord le falta un permiso, la partida sigue y el bot lo registra en vez de detenerse.
+- Calidad: cada cambio pasa por una pull request con comprobaciones automáticas (compilación, pruebas y simulación) antes de entrar en la rama principal.
 
 El [caso técnico](docs/caso-tecnico.md) explica cuatro problemas concretos del proyecto y cómo se resolvieron, incluyendo lo que sigue abierto.
 

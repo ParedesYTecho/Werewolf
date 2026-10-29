@@ -37,6 +37,15 @@ This repository is the project's showcase. The source code is private.
   </tr>
 </table>
 
+<p align="center">
+  <a href="https://werewolfdashboard.vercel.app"><picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/web/landing-dia.jpg">
+    <img src="assets/web/landing-noche.jpg" alt="Werewolf website home page: Pueblo duerme over a forest, with the moon at night and the sun by day" width="100%">
+  </picture></a>
+</p>
+
+<p align="center"><sub>The website has a night and a day phase; the switch in the header toggles between them.</sub></p>
+
 ## How a game works
 
 1. Someone opens the lobby with `/start` and the others join with `/join`.
@@ -52,7 +61,7 @@ Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix
 - **Casual.** Same rules and deck, optional anonymity, and no server rewards.
 - **One Night.** A single night, 3 to 10 players, with its own roles. Votes are shown at the end.
 
-The bot builds the deck from the player count and what each role contributes. It is a calculated split, not a guarantee of a balanced game: the outcome still depends on how people play.
+The bot builds the deck from the player count and what each role contributes. The split is calculated, but how balanced a game turns out still depends on how people play.
 
 ## Dashboard
 
@@ -68,7 +77,7 @@ The bot does not ask for the Administrator permission. For the `ww!` prefix it u
 
 ## About the project
 
-Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios).
+Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/estado) page checks whether the bot's server responds.
 
 ```mermaid
 flowchart LR
@@ -78,12 +87,12 @@ flowchart LR
   W -. login .-> D
 ```
 
-- **Bot:** Python with discord.py. Each role has its own night logic, separate from the rest of the engine.
-- **Dashboard:** Next.js 16 (App Router) and React 19, with Discord sign-in (Auth.js).
-- **Data:** Supabase (PostgreSQL), shared by the bot and the dashboard, with statistics stored per server.
-- **Balance:** a Monte Carlo simulation plays games with random role splits to measure how each side wins at each table size.
-- **Fault tolerance:** if Discord denies a permission, the game carries on and the bot logs it instead of stopping.
-- **Quality:** every change goes through a pull request with automated checks (compilation, tests and simulation) before reaching the main branch.
+- Bot: Python with discord.py. Each role has its own night logic, separate from the rest of the engine.
+- Dashboard: Next.js 16 (App Router) and React 19, with Discord sign-in (Auth.js).
+- Data: Supabase (PostgreSQL), shared by the bot and the dashboard, with statistics stored per server.
+- Balance: a Monte Carlo simulation plays games with random role splits to measure how each side wins at each table size.
+- Fault tolerance: if Discord denies a permission, the game carries on and the bot logs it instead of stopping.
+- Quality: every change goes through a pull request with automated checks (compilation, tests and simulation) before reaching the main branch.
 
 The [technical case](docs/technical-case.md) describes four concrete problems from the project and how they were solved, including what is still open.
 
