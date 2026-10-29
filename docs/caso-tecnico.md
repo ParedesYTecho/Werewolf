@@ -42,5 +42,5 @@ Lo que este conjunto no demuestra: un test en verde no significa que el juego es
 ## Lo que sigue abierto
 
 - La recuperación de partidas tras un reinicio guarda un estado serializable, pero no todos los datos de cada modo sobreviven. Está documentado internamente y sin resolver.
-- Algunas condiciones de victoria independientes tienen descripciones que no coinciden del todo con su implementación. Se tratan como decisión pendiente y no se cambian sin acuerdo.
+- Casual y One Night no puntúan: una revisión encontró que el guardado de partidas les sumaba puntos y logros igualmente, y quedó corregido con tests de regresión. La victoria del Lobo Blanco, que según su descripción debe ser el único superviviente, también se alineó con esa regla. Quedan por revisar otras condiciones de victoria independientes.
 - Parte de las pruebas heredadas del proyecto sigue pendiente de revisión.
