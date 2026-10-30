@@ -59,7 +59,7 @@ Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix
 
 - **Ranked.** The classic, competitive game: always anonymous voting and the server's rewards (streaks and coins, if enabled).
 - **Casual.** Same rules and deck, optional anonymity, and no server rewards.
-- **One Night.** A single night, 3 to 10 players, with its own roles. Votes are shown at the end.
+- **One Night.** A single night, 3 to 10 players, with its own roles. You see your card with a button, and only you can see it. Everyone acts at the same time, the debate can end early once everyone is ready, and the vote is secret. At the end the bot tells what really happened: steals, swaps, final cards and who voted for whom.
 
 The bot builds the deck from the player count and what each role contributes. The split is calculated, but how balanced a game turns out still depends on how people play.
 

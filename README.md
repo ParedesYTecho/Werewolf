@@ -59,7 +59,7 @@ Los comandos funcionan como comandos de barra (`/`), con mención al bot o con e
 
 - **Ranked.** La partida clásica y competitiva: voto siempre anónimo y recompensas del servidor (rachas y monedas, si están activadas).
 - **Casual.** Mismas reglas y reparto, con anonimato opcional y sin recompensas del servidor.
-- **One Night.** Una sola noche, de 3 a 10 jugadores y roles propios. Los votos se muestran al final.
+- **One Night.** Una sola noche, de 3 a 10 jugadores y roles propios. Tu carta la ves con un botón y solo la ves tú. Todos actúan a la vez, el debate puede acabar antes si todos están listos y el voto es secreto. Al final, el bot cuenta qué pasó de verdad: robos, intercambios, cartas finales y quién votó a quién.
 
 El bot arma el mazo según el número de jugadores y lo que aporta cada rol. El reparto está calculado, pero el equilibrio de cada partida depende de cómo se juegue.
 
