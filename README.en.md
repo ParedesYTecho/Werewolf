@@ -53,19 +53,23 @@ This repository is the project's showcase. The source code is private.
 3. At night, roles with abilities act. By day the village debates and votes on who to eliminate.
 4. The game ends when a side meets its goal, and the bot records the result.
 
+If you forget your role or lose the night menu, `/myrole` shows your role, the current phase and what you have to do. Only you can see it. If the menu for your action is still open you can reopen it from there; if the phase is over, it tells you so.
+
 Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix, which each server can change. `/help` lists them all.
 
 ## Modes
 
 - **Ranked.** The classic, competitive game: always anonymous voting and the server's rewards (streaks and coins, if enabled).
 - **Casual.** Same rules and deck, optional anonymity, and no server rewards.
-- **One Night.** A single night, 3 to 10 players, with its own roles. Votes are shown at the end.
+- **One Night.** A single night, 3 to 10 players, with its own roles. You see your card with a button, and only you can see it. Everyone acts at the same time, the debate can end early once everyone is ready, and the vote is secret. At the end the bot tells what really happened: steals, swaps, final cards and who voted for whom.
 
 The bot builds the deck from the player count and what each role contributes. The split is calculated, but how balanced a game turns out still depends on how people play.
 
 ## Dashboard
 
-The [dashboard](https://werewolfdashboard.vercel.app/dashboard) signs in with Discord. Everyone sees their profile and game history for their servers. Server admins can also change settings from the browser and review reports, including the game channel, a ping role for `/mention`, a "Playing" role during games, win-streak roles, muting eliminated players, locking the channel while voting, and optional UnbelievaBoat coin rewards.
+The [dashboard](https://werewolfdashboard.vercel.app/dashboard) signs in with Discord. For each server, everyone sees their summary, statistics, game history, achievements, leaderboard and profile. The history groups games by day, and each game has a summary built only from what was saved. When a duration is an estimate, it is marked with "≈" and left out of the averages. The look matches the website, with a night and a day mode.
+
+Server admins also see the server's summary, statistics, reports and audit log, and can change settings from the browser, including the game channel, a ping role for `/mention`, a "Playing" role during games, win-streak roles, muting eliminated players, locking the channel while voting, and optional UnbelievaBoat coin rewards.
 
 ## Get started
 
