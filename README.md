@@ -53,6 +53,8 @@ Este repositorio es su escaparate. El código fuente es privado.
 3. De noche actúan los roles con habilidad. De día el pueblo debate y vota a quién eliminar.
 4. La partida termina cuando un bando cumple su objetivo, y el bot anota el resultado.
 
+Si no recuerdas tu rol o se te perdió el menú de la noche, `/myrole` te muestra tu rol, la fase en curso y lo que te toca hacer. Solo lo ves tú. Si el menú de tu acción sigue abierto, desde ahí puedes volver a abrirlo; si la fase ya terminó, te lo dice.
+
 Los comandos funcionan como comandos de barra (`/`), con mención al bot o con el prefijo `ww!`, que cada servidor puede cambiar. `/help` muestra la lista completa.
 
 ## Modos
@@ -67,7 +69,9 @@ La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica l
 
 ## Dashboard
 
-El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Cada persona ve su perfil y el historial de partidas de sus servidores. Quien administra un servidor puede además cambiar sus ajustes desde el navegador y revisar los reportes:
+El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Cada persona ve, por servidor, su resumen, estadísticas, historial de partidas, logros, clasificación y perfil. El historial agrupa las partidas por día y cada una tiene su resumen, hecho solo con lo que quedó guardado. Cuando una duración es una estimación, se marca con «≈» y no cuenta en las medias. El diseño es el mismo de la web, con modo noche y día.
+
+Quien administra un servidor ve además su resumen, estadísticas, reportes y registro de auditoría, y puede cambiar los ajustes desde el navegador:
 
 - elegir el canal de las partidas y un rol de aviso que `/mention` llama a jugar;
 - dar un rol «Jugando» mientras dura la partida y roles por racha de victorias;
