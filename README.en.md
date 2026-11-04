@@ -48,7 +48,7 @@ This repository is the project's showcase. The source code is private.
 
 ## How a game works
 
-1. Someone opens the lobby with `/start` and the others join with `/join`.
+1. Someone opens the lobby with `/start` and the others join with `/join` or its button. The lobby also has buttons for help, for testing direct messages and, for its creator or an admin, for managing the table.
 2. Each player receives a role by direct message.
 3. At night, roles with abilities act. By day the village debates and votes on who to eliminate.
 4. The game ends when a side meets its goal, and the bot records the result.
@@ -67,7 +67,7 @@ The bot builds the deck from the player count and what each role contributes. Th
 
 ## Dashboard
 
-The [dashboard](https://werewolfdashboard.vercel.app/dashboard) signs in with Discord. For each server, everyone sees their summary, statistics, game history, achievements, leaderboard and profile. The history groups games by day, and each game has a summary built only from what was saved. When a duration is an estimate, it is marked with "≈" and left out of the averages. The look matches the website, with a night and a day mode.
+The [dashboard](https://werewolfdashboard.vercel.app/dashboard) signs in with Discord. You pick a server first, and you can star favorites or jump back to the last one you visited. For each server, everyone sees their summary, statistics, game history, achievements, leaderboard and profile. The history groups games by day, and each game has a summary built only from what was saved. When a duration is an estimate, it is marked with "≈" and left out of the averages. The look matches the website, with a night and a day mode.
 
 Server admins also see the server's summary, statistics, reports and audit log, and can change settings from the browser, including the game channel, a ping role for `/mention`, a "Playing" role during games, win-streak roles, muting eliminated players, locking the channel while voting, and optional UnbelievaBoat coin rewards.
 
@@ -81,7 +81,7 @@ The bot does not ask for the Administrator permission. For the `ww!` prefix it u
 
 ## About the project
 
-Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/estado) page checks whether the bot's server responds.
+Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/estado) page shows whether the bot is connected to Discord and whether the database and the website respond.
 
 ```mermaid
 flowchart LR
