@@ -48,7 +48,7 @@ Este repositorio es su escaparate. El código fuente es privado.
 
 ## Cómo es una partida
 
-1. Alguien abre el lobby con `/start` y los demás entran con `/join`.
+1. Alguien abre el lobby con `/start` y los demás entran con `/join` o con su botón. El lobby también tiene botones de ayuda, para probar los mensajes privados y, para quien lo creó o administra, para gestionar la mesa.
 2. Cada jugador recibe su rol por mensaje privado.
 3. De noche actúan los roles con habilidad. De día el pueblo debate y vota a quién eliminar.
 4. La partida termina cuando un bando cumple su objetivo, y el bot anota el resultado.
@@ -69,7 +69,7 @@ La [enciclopedia de roles](https://werewolfdashboard.vercel.app/roles) explica l
 
 ## Dashboard
 
-El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Cada persona ve, por servidor, su resumen, estadísticas, historial de partidas, logros, clasificación y perfil. El historial agrupa las partidas por día y cada una tiene su resumen, hecho solo con lo que quedó guardado. Cuando una duración es una estimación, se marca con «≈» y no cuenta en las medias. El diseño es el mismo de la web, con modo noche y día.
+El [dashboard](https://werewolfdashboard.vercel.app/dashboard) usa el inicio de sesión de Discord. Al entrar eliges servidor; puedes marcar favoritos y volver de un clic al último que visitaste. Cada persona ve, por servidor, su resumen, estadísticas, historial de partidas, logros, clasificación y perfil. El historial agrupa las partidas por día y cada una tiene su resumen, hecho solo con lo que quedó guardado. Cuando una duración es una estimación, se marca con «≈» y no cuenta en las medias. El diseño es el mismo de la web, con modo noche y día.
 
 Quien administra un servidor ve además su resumen, estadísticas, reportes y registro de auditoría, y puede cambiar los ajustes desde el navegador:
 
@@ -113,7 +113,7 @@ El detalle está en la [política de privacidad](https://werewolfdashboard.verce
 
 ## Sobre el proyecto
 
-Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios), por versiones. La página de [estado del servicio](https://werewolfdashboard.vercel.app/estado) comprueba si el servidor del bot responde.
+Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios), por versiones. La página de [estado del servicio](https://werewolfdashboard.vercel.app/estado) muestra si el bot está conectado a Discord y si responden la base de datos y la web.
 
 ```mermaid
 flowchart LR
