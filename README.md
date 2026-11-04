@@ -53,6 +53,13 @@ Este repositorio es su escaparate. El código fuente es privado.
 3. De noche actúan los roles con habilidad. De día el pueblo debate y vota a quién eliminar.
 4. La partida termina cuando un bando cumple su objetivo, y el bot anota el resultado.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/diagrams/ciclo-light-es.svg">
+    <img src="assets/diagrams/ciclo-dark-es.svg" alt="Ciclo de una partida: lobby, reparto de roles y un bucle de noche, día y votación hasta que hay ganador; después el resultado va al ranking." width="100%">
+  </picture>
+</p>
+
 Si no recuerdas tu rol o se te perdió el menú de la noche, `/myrole` te muestra tu rol, la fase en curso y lo que te toca hacer. Solo lo ves tú. Si el menú de tu acción sigue abierto, desde ahí puedes volver a abrirlo; si la fase ya terminó, te lo dice.
 
 Los comandos funcionan como comandos de barra (`/`), con mención al bot o con el prefijo `ww!`, que cada servidor puede cambiar. `/help` muestra la lista completa.
@@ -115,13 +122,12 @@ El detalle está en la [política de privacidad](https://werewolfdashboard.verce
 
 Werewolf sigue en desarrollo activo. Las novedades publicadas están en el [historial de cambios](https://werewolfdashboard.vercel.app/cambios), por versiones. La página de [estado del servicio](https://werewolfdashboard.vercel.app/estado) muestra si el bot está conectado a Discord y si responden la base de datos y la web.
 
-```mermaid
-flowchart LR
-  D([Discord]) <--> B[Bot · Render]
-  B <--> S[(Supabase)]
-  S <--> W[Dashboard · Vercel]
-  W -. login .-> D
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/diagrams/arquitectura-light-es.svg">
+    <img src="assets/diagrams/arquitectura-dark-es.svg" alt="Arquitectura: Discord y el bot (Render) se comunican; el bot y el dashboard (Vercel) comparten la base de datos de Supabase; el dashboard usa el inicio de sesión de Discord." width="100%">
+  </picture>
+</p>
 
 - Bot: Python con discord.py. Cada rol tiene su propia lógica nocturna, separada del resto del motor.
 - Dashboard: Next.js 16 (App Router) y React 19, con inicio de sesión de Discord (Auth.js).

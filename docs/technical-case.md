@@ -11,6 +11,13 @@ Werewolf is a Discord bot for playing the social-deduction game Werewolf without
 - **Data:** Supabase (PostgreSQL), with the bot and the dashboard reading and writing the same schema.
 - **Dashboard:** Next.js 16 and React 19 with Discord sign-in.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="../assets/diagrams/arquitectura-light-en.svg">
+    <img src="../assets/diagrams/arquitectura-dark-en.svg" alt="Architecture: Discord and the bot (Render) talk to each other; the bot and the dashboard (Vercel) share the Supabase database; the dashboard uses Discord sign-in." width="100%">
+  </picture>
+</p>
+
 ## 1. Computed decks instead of fixed presets
 
 A fixed role split works for eight players and breaks at twenty. The bot builds the deck from the player count and what each role contributes, applies rules that reject unplayable combinations, and reserves three center cards for the roles that use them. The cap is 20 players (23 cards including the center ones).
@@ -28,6 +35,13 @@ The bug was first reproduced with a failing test and only then fixed. The settin
 The bot is invited without the Administrator permission, which has a side effect: to lock a channel during voting, the permission to send messages is removed for everyone, and the bot loses its ability to speak as well.
 
 The fix is to grant the bot that permission in the channel before locking it. If Discord refuses, the lock is skipped: a game with an open channel is preferred to a game without a voice. This is a deliberate decision with its rationale recorded. The invite link and the dashboard share a single permission definition so they cannot drift apart.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="../assets/diagrams/canal-light-en.svg">
+    <img src="../assets/diagrams/canal-dark-en.svg" alt="Channel lock: the bot grants itself permission to write before locking; if Discord refuses, the channel stays open." width="100%">
+  </picture>
+</p>
 
 ## 4. Discord IDs and JavaScript
 
