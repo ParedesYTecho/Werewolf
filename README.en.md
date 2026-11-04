@@ -53,6 +53,13 @@ This repository is the project's showcase. The source code is private.
 3. At night, roles with abilities act. By day the village debates and votes on who to eliminate.
 4. The game ends when a side meets its goal, and the bot records the result.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/diagrams/ciclo-light-en.svg">
+    <img src="assets/diagrams/ciclo-dark-en.svg" alt="Game cycle: lobby, role deal, then a night, day and vote loop until there is a winner; the result then goes to the ranking." width="100%">
+  </picture>
+</p>
+
 If you forget your role or lose the night menu, `/myrole` shows your role, the current phase and what you have to do. Only you can see it. If the menu for your action is still open you can reopen it from there; if the phase is over, it tells you so.
 
 Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix, which each server can change. `/help` lists them all.
@@ -83,13 +90,12 @@ The bot does not ask for the Administrator permission. For the `ww!` prefix it u
 
 Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/estado) page shows whether the bot is connected to Discord and whether the database and the website respond.
 
-```mermaid
-flowchart LR
-  D([Discord]) <--> B[Bot · Render]
-  B <--> S[(Supabase)]
-  S <--> W[Dashboard · Vercel]
-  W -. login .-> D
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/diagrams/arquitectura-light-en.svg">
+    <img src="assets/diagrams/arquitectura-dark-en.svg" alt="Architecture: Discord and the bot (Render) talk to each other; the bot and the dashboard (Vercel) share the Supabase database; the dashboard uses Discord sign-in." width="100%">
+  </picture>
+</p>
 
 - Bot: Python with discord.py. Each role has its own night logic, separate from the rest of the engine.
 - Dashboard: Next.js 16 (App Router) and React 19, with Discord sign-in (Auth.js).

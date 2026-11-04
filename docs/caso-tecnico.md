@@ -11,6 +11,13 @@ Werewolf es un bot de Discord para jugar a Hombres Lobo sin narrador, con un das
 - **Datos:** Supabase (PostgreSQL). El bot y el dashboard leen y escriben el mismo esquema.
 - **Dashboard:** Next.js 16 con React 19 e inicio de sesión de Discord.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="../assets/diagrams/arquitectura-light-es.svg">
+    <img src="../assets/diagrams/arquitectura-dark-es.svg" alt="Arquitectura: Discord y el bot (Render) se comunican; el bot y el dashboard (Vercel) comparten la base de datos de Supabase; el dashboard usa el inicio de sesión de Discord." width="100%">
+  </picture>
+</p>
+
 ## 1. Mazos calculados en lugar de configuraciones fijas
 
 Un reparto de roles fijo funciona para una mesa de ocho y se rompe en una de veinte. El bot genera el mazo a partir del número de jugadores y de lo que aporta cada rol, aplica reglas que descartan combinaciones injugables y reserva tres cartas centrales para los roles que las usan. El límite es de 20 jugadores (23 cartas con las centrales).
@@ -28,6 +35,13 @@ El fallo se reprodujo primero con un test que fallaba y solo después se corrigi
 El bot se invita sin permiso de Administrador. Eso tiene un efecto secundario: para cerrar el canal mientras se vota se quita a todos el permiso de enviar mensajes, y el bot también deja de poder hablar.
 
 La solución es concederle ese permiso en el canal antes de cerrarlo. Si Discord lo rechaza, el cierre no se aplica: se prefiere una partida con el canal abierto a una partida sin voz. Es una decisión deliberada, con su motivo registrado. La invitación y el dashboard comparten una única definición de permisos para que no se desalineen.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="../assets/diagrams/canal-light-es.svg">
+    <img src="../assets/diagrams/canal-dark-es.svg" alt="Cierre del canal: el bot se concede permiso para escribir antes de cerrarlo; si Discord lo rechaza, el canal queda abierto." width="100%">
+  </picture>
+</p>
 
 ## 4. Identificadores de Discord y JavaScript
 
