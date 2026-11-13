@@ -72,6 +72,8 @@ Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix
 
 The bot builds the deck from the player count and what each role contributes. The split is calculated, but how balanced a game turns out still depends on how people play.
 
+The [role encyclopedia](https://werewolfdashboard.vercel.app/roles) covers the 28 classic roles and the 11 One Night roles, each with its full text and a playing tip. [Meta and balance](https://werewolfdashboard.vercel.app/meta) shows how often each role comes up at each table size, computed with the same deck builder the bot uses, and lets you look at a sample table.
+
 ## Dashboard
 
 The [dashboard](https://werewolfdashboard.vercel.app/dashboard) signs in with Discord. You pick a server first, and you can star favorites or jump back to the last one you visited. For each server, everyone sees their summary, statistics, game history, achievements, leaderboard and profile. The history groups games by day, and each game has a summary built only from what was saved. When a duration is an estimate, it is marked with "≈" and left out of the averages. The look matches the website, with a night and a day mode.
