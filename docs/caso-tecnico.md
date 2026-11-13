@@ -34,7 +34,7 @@ El fallo se reprodujo primero con un test que fallaba y solo después se corrigi
 
 El bot se invita sin permiso de Administrador. Eso tiene un efecto secundario: para cerrar el canal mientras se vota se quita a todos el permiso de enviar mensajes, y el bot también deja de poder hablar.
 
-La solución es concederle ese permiso en el canal antes de cerrarlo. Si Discord lo rechaza, el cierre no se aplica: se prefiere una partida con el canal abierto a una partida sin voz. Es una decisión deliberada, con su motivo registrado. La invitación y el dashboard comparten una única definición de permisos para que no se desalineen.
+La solución es concederle ese permiso en el canal antes de cerrarlo. Si Discord lo rechaza, el cierre no se aplica: se prefiere una partida con el canal abierto a una partida sin voz. La invitación y el dashboard comparten una única definición de permisos para que no se desalineen.
 
 <p align="center">
   <picture>
@@ -51,7 +51,7 @@ Los identificadores de Discord superan el mayor entero que JavaScript representa
 
 Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión.
 
-Las reglas del reglamento están escritas como pruebas. Para saber si esas pruebas sirven, una herramienta cambia cada regla a propósito y comprueba que alguna prueba falla. Otra batería genera noches al azar y verifica que el resultado cumple siempre las mismas condiciones. Las consultas y restricciones de la base de datos se prueban contra un PostgreSQL que corre en memoria.
+Las reglas del reglamento están escritas como pruebas. Para saber si esas pruebas sirven, una herramienta cambia cada regla a propósito y comprueba que alguna prueba falla. Otra batería genera noches al azar y verifica que el resultado cumple siempre las mismas condiciones. El día y la votación del modo clásico se prueban de extremo a extremo con el menú de voto real, y hay pruebas con dos partidas a la vez para comprobar que no se mezclan. Las consultas y restricciones de la base de datos se prueban contra un PostgreSQL que corre en memoria.
 
 Lo que este conjunto no demuestra: un test en verde no significa que el juego esté completamente probado. No hay pruebas contra Discord real, las simulaciones usan agentes heurísticos y la cobertura no se mide.
 
@@ -59,5 +59,4 @@ Lo que este conjunto no demuestra: un test en verde no significa que el juego es
 
 - La recuperación de partidas tras un reinicio guarda un estado serializable, pero no todos los datos de cada modo sobreviven. Está documentado internamente y sin resolver.
 - Casual y One Night no puntúan: una revisión encontró que el guardado de partidas les sumaba puntos y logros igualmente, y quedó corregido con tests de regresión. La victoria del Lobo Blanco, que según su descripción debe ser el único superviviente, también se alineó con esa regla. Después se revisaron las condiciones de victoria regla por regla y no aparecieron más defectos.
-- El día y la votación del modo clásico no tienen todavía pruebas de extremo a extremo; One Night sí las tiene, incluida la recuperación tras un reinicio.
 - Parte de las pruebas heredadas del proyecto sigue pendiente de revisión.
