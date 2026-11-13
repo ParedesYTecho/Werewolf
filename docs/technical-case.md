@@ -51,10 +51,13 @@ Discord identifiers exceed the largest integer JavaScript can represent exactly 
 
 Every change lands through a pull request. A GitHub Actions workflow checks syntax, imports the bot (which registers every command), runs the test suite and a Monte Carlo simulation, and passing is required to merge. Confirmed defects get a regression test.
 
-What this does not prove: a green test run does not mean the game is fully tested. There are no tests against real Discord, the simulations use heuristic agents, and coverage is not measured. A full rebuild of the test strategy is a pending initiative.
+The rules in the rulebook are written as tests. To check that those tests are worth having, a tool breaks each rule on purpose and confirms that some test fails. Another suite generates random nights and verifies that the outcome always meets the same conditions. Database queries and constraints are tested against a PostgreSQL instance running in memory.
+
+What this does not prove: a green test run does not mean the game is fully tested. There are no tests against real Discord, the simulations use heuristic agents, and coverage is not measured.
 
 ## What is still open
 
 - Game recovery after a restart stores serializable state, but not every mode's data survives. This is documented internally and unresolved.
-- Casual and One Night do not score: a review found that game saving still gave them points and achievements, which is now fixed with regression tests. The White Wolf's win, which by its description requires being the sole survivor, was aligned with that rule too. Other independent win conditions still need review.
+- Casual and One Night do not score: a review found that game saving still gave them points and achievements, which is now fixed with regression tests. The White Wolf's win, which by its description requires being the sole survivor, was aligned with that rule too. The win conditions were later reviewed rule by rule and no further defects turned up.
+- Day and voting in the classic mode do not have end-to-end tests yet; One Night does, including recovery after a restart.
 - Part of the project's legacy test code is still waiting for review.
