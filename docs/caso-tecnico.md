@@ -51,10 +51,13 @@ Los identificadores de Discord superan el mayor entero que JavaScript representa
 
 Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión.
 
-Lo que este conjunto no demuestra: un test en verde no significa que el juego esté completamente probado. No hay pruebas contra Discord real, las simulaciones usan agentes heurísticos y la cobertura no se mide. Reconstruir las pruebas de forma integral es una iniciativa pendiente.
+Las reglas del reglamento están escritas como pruebas. Para saber si esas pruebas sirven, una herramienta cambia cada regla a propósito y comprueba que alguna prueba falla. Otra batería genera noches al azar y verifica que el resultado cumple siempre las mismas condiciones. Las consultas y restricciones de la base de datos se prueban contra un PostgreSQL que corre en memoria.
+
+Lo que este conjunto no demuestra: un test en verde no significa que el juego esté completamente probado. No hay pruebas contra Discord real, las simulaciones usan agentes heurísticos y la cobertura no se mide.
 
 ## Lo que sigue abierto
 
 - La recuperación de partidas tras un reinicio guarda un estado serializable, pero no todos los datos de cada modo sobreviven. Está documentado internamente y sin resolver.
-- Casual y One Night no puntúan: una revisión encontró que el guardado de partidas les sumaba puntos y logros igualmente, y quedó corregido con tests de regresión. La victoria del Lobo Blanco, que según su descripción debe ser el único superviviente, también se alineó con esa regla. Quedan por revisar otras condiciones de victoria independientes.
+- Casual y One Night no puntúan: una revisión encontró que el guardado de partidas les sumaba puntos y logros igualmente, y quedó corregido con tests de regresión. La victoria del Lobo Blanco, que según su descripción debe ser el único superviviente, también se alineó con esa regla. Después se revisaron las condiciones de victoria regla por regla y no aparecieron más defectos.
+- El día y la votación del modo clásico no tienen todavía pruebas de extremo a extremo; One Night sí las tiene, incluida la recuperación tras un reinicio.
 - Parte de las pruebas heredadas del proyecto sigue pendiente de revisión.
