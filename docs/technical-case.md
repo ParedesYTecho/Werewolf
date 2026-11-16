@@ -49,7 +49,7 @@ Discord identifiers exceed the largest integer JavaScript can represent exactly 
 
 ## Testing and continuous integration
 
-Every change lands through a pull request. A GitHub Actions workflow checks syntax, imports the bot (which registers every command), runs the test suite and a Monte Carlo simulation, and passing is required to merge. Confirmed defects get a regression test.
+Every change lands through a pull request. A GitHub Actions workflow checks syntax, imports the bot (which registers every command), runs the test suite and a Monte Carlo simulation, and passing is required to merge. Confirmed defects get a regression test. One example: game saving used to give points and achievements to Casual and One Night, which do not score. That is fixed.
 
 The rules in the rulebook are written as tests. To check that those tests are worth having, a tool breaks each rule on purpose and confirms that some test fails. Another suite generates random nights and verifies that the outcome always meets the same conditions. Day and voting in the classic mode are tested end to end with the real vote menu, and some tests run two games at once to check that they do not mix. Database queries and constraints are tested against a PostgreSQL instance running in memory.
 
@@ -57,6 +57,5 @@ What this does not prove: a green test run does not mean the game is fully teste
 
 ## What is still open
 
-- Game recovery after a restart stores serializable state, but not every mode's data survives. This is documented internally and unresolved.
-- Casual and One Night do not score: a review found that game saving still gave them points and achievements, which is now fixed with regression tests. The White Wolf's win, which by its description requires being the sole survivor, was aligned with that rule too. The win conditions were later reviewed rule by rule and no further defects turned up.
+- If the bot restarts in the middle of a game, it resumes from the last saved point, One Night included, and tests check this stage by stage. Some things do not come back: a lobby that had not started is lost, and if the restart happens during the day, the debate and the vote start over.
 - Part of the project's legacy test code is still waiting for review.

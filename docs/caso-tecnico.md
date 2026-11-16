@@ -49,7 +49,7 @@ Los identificadores de Discord superan el mayor entero que JavaScript representa
 
 ## Pruebas e integración continua
 
-Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión.
+Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión. Así quedó corregido, por ejemplo, que el guardado de partidas sumara puntos y logros a Casual y One Night, que no puntúan.
 
 Las reglas del reglamento están escritas como pruebas. Para saber si esas pruebas sirven, una herramienta cambia cada regla a propósito y comprueba que alguna prueba falla. Otra batería genera noches al azar y verifica que el resultado cumple siempre las mismas condiciones. El día y la votación del modo clásico se prueban de extremo a extremo con el menú de voto real, y hay pruebas con dos partidas a la vez para comprobar que no se mezclan. Las consultas y restricciones de la base de datos se prueban contra un PostgreSQL que corre en memoria.
 
@@ -57,6 +57,5 @@ Lo que este conjunto no demuestra: un test en verde no significa que el juego es
 
 ## Lo que sigue abierto
 
-- La recuperación de partidas tras un reinicio guarda un estado serializable, pero no todos los datos de cada modo sobreviven. Está documentado internamente y sin resolver.
-- Casual y One Night no puntúan: una revisión encontró que el guardado de partidas les sumaba puntos y logros igualmente, y quedó corregido con tests de regresión. La victoria del Lobo Blanco, que según su descripción debe ser el único superviviente, también se alineó con esa regla. Después se revisaron las condiciones de victoria regla por regla y no aparecieron más defectos.
+- Si el bot se reinicia en mitad de una partida, la retoma desde el último punto guardado, también en One Night, y hay pruebas que lo comprueban etapa por etapa. Hay cosas que no vuelven: un lobby sin empezar se pierde, y si el reinicio cae en pleno día, el debate y la votación empiezan de nuevo.
 - Parte de las pruebas heredadas del proyecto sigue pendiente de revisión.
