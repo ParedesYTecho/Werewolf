@@ -49,7 +49,7 @@ Los identificadores de Discord superan el mayor entero que JavaScript representa
 
 ## Pruebas e integración continua
 
-Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión. Así quedó corregido, por ejemplo, que el guardado de partidas sumara puntos y logros a Casual y One Night, que no puntúan.
+Cada cambio entra mediante una pull request. Un flujo de GitHub Actions comprueba la sintaxis, importa el bot (lo que registra todos los comandos), ejecuta la batería de tests y lanza una simulación Monte Carlo. Superarlo es requisito para fusionar. Los defectos confirmados llevan su test de regresión. Así quedó corregido, por ejemplo, que el guardado de partidas sumara puntos y logros a Casual y One Night, que no puntúan, y que el bot pisara con una copia antigua un ajuste recién guardado desde el dashboard: ahora cada escritura comprueba una revisión de la configuración y reintenta si alguien escribió antes.
 
 Las reglas del reglamento están escritas como pruebas. Para saber si esas pruebas sirven, una herramienta cambia cada regla a propósito y comprueba que alguna prueba falla. Otra batería genera noches al azar y verifica que el resultado cumple siempre las mismas condiciones. El día y la votación del modo clásico se prueban de extremo a extremo con el menú de voto real, y hay pruebas con dos partidas a la vez para comprobar que no se mezclan. Las consultas y restricciones de la base de datos se prueban contra un PostgreSQL que corre en memoria.
 

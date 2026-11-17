@@ -49,7 +49,7 @@ Discord identifiers exceed the largest integer JavaScript can represent exactly 
 
 ## Testing and continuous integration
 
-Every change lands through a pull request. A GitHub Actions workflow checks syntax, imports the bot (which registers every command), runs the test suite and a Monte Carlo simulation, and passing is required to merge. Confirmed defects get a regression test. One example: game saving used to give points and achievements to Casual and One Night, which do not score. That is fixed.
+Every change lands through a pull request. A GitHub Actions workflow checks syntax, imports the bot (which registers every command), runs the test suite and a Monte Carlo simulation, and passing is required to merge. Confirmed defects get a regression test. Two examples: game saving used to give points and achievements to Casual and One Night, which do not score, and the bot could overwrite a setting just saved from the dashboard with a stale copy. Every write now checks a configuration revision and retries if someone else wrote first.
 
 The rules in the rulebook are written as tests. To check that those tests are worth having, a tool breaks each rule on purpose and confirms that some test fails. Another suite generates random nights and verifies that the outcome always meets the same conditions. Day and voting in the classic mode are tested end to end with the real vote menu, and some tests run two games at once to check that they do not mix. Database queries and constraints are tested against a PostgreSQL instance running in memory.
 
