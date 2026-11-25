@@ -7,9 +7,9 @@
 <p align="center">
   <a href="https://discord.com/oauth2/authorize?client_id=1386739677729652888&scope=bot+applications.commands&permissions=2252074960251968"><b>Add to Discord</b></a>
   &nbsp;·&nbsp;
-  <a href="https://werewolfdashboard.vercel.app">Website</a>
+  <a href="https://werewolfdashboard.vercel.app/en">Website</a>
   &nbsp;·&nbsp;
-  <a href="https://werewolfdashboard.vercel.app/roles">Roles</a>
+  <a href="https://werewolfdashboard.vercel.app/en/roles">Roles</a>
   &nbsp;·&nbsp;
   <a href="https://werewolfdashboard.vercel.app/dashboard">Dashboard</a>
   &nbsp;·&nbsp;
@@ -33,12 +33,12 @@ This repository is the project's showcase. The source code is private.
   </tr>
   <tr>
     <td width="50%" align="center" valign="top"><img src="assets/brand/icons/icon-trofeo.png" width="64" alt=""><br><b>Per-server ranking</b><br><sub>Profiles, achievements and statistics.</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="https://werewolfdashboard.vercel.app/roles"><b>See all 28 roles</b></a><br><sub>Encyclopedia on the website.</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="https://werewolfdashboard.vercel.app/en/roles"><b>See all 28 roles</b></a><br><sub>Encyclopedia on the website.</sub></td>
   </tr>
 </table>
 
 <p align="center">
-  <a href="https://werewolfdashboard.vercel.app"><picture>
+  <a href="https://werewolfdashboard.vercel.app/en"><picture>
     <source media="(prefers-color-scheme: light)" srcset="assets/web/landing-dia.jpg">
     <img src="assets/web/landing-noche.jpg" alt="Werewolf website home page: Pueblo duerme over a forest, with the moon at night and the sun by day" width="100%">
   </picture></a>
@@ -72,7 +72,7 @@ Commands work as slash commands, by mentioning the bot, or with the `ww!` prefix
 
 The bot builds the deck from the player count and what each role contributes. The split is calculated, but how balanced a game turns out still depends on how people play.
 
-The [role encyclopedia](https://werewolfdashboard.vercel.app/roles) covers the 28 classic roles and the 11 One Night roles, each with its full text and a playing tip. [Meta and balance](https://werewolfdashboard.vercel.app/meta) shows how often each role comes up at each table size, computed with the same deck builder the bot uses, and lets you look at a sample table.
+The [role encyclopedia](https://werewolfdashboard.vercel.app/en/roles) covers the 28 classic roles and the 11 One Night roles, each with its full text and a playing tip. [Meta and balance](https://werewolfdashboard.vercel.app/en/meta) shows how often each role comes up at each table size, computed with the same deck builder the bot uses, and lets you look at a sample table.
 
 ## Dashboard
 
@@ -86,11 +86,11 @@ Server admins also see the server's summary, statistics, reports and audit log, 
 2. Type `/help` to see the commands.
 3. Open a game with `/start`.
 
-The bot does not ask for the Administrator permission. For the `ww!` prefix it uses the privileged Message Content intent, only to recognise commands; it does not store message text. See the [privacy policy](https://werewolfdashboard.vercel.app/privacy) and the [terms](https://werewolfdashboard.vercel.app/terms).
+The bot does not ask for the Administrator permission. For the `ww!` prefix it uses the privileged Message Content intent, only to recognise commands; it does not store message text. See the [privacy policy](https://werewolfdashboard.vercel.app/en/privacy) and the [terms](https://werewolfdashboard.vercel.app/en/terms).
 
 ## About the project
 
-Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/estado) page shows whether the bot is connected to Discord and whether the database and the website respond.
+Werewolf is under active development. Published changes are in the [changelog](https://werewolfdashboard.vercel.app/en/cambios), by version. The [service status](https://werewolfdashboard.vercel.app/en/estado) page shows whether the bot is connected to Discord and whether the database and the website respond.
 
 <p align="center">
   <picture>
