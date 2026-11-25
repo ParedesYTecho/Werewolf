@@ -39,8 +39,8 @@ This repository is the project's showcase. The source code is private.
 
 <p align="center">
   <a href="https://werewolfdashboard.vercel.app/en"><picture>
-    <source media="(prefers-color-scheme: light)" srcset="assets/web/landing-dia.jpg">
-    <img src="assets/web/landing-noche.jpg" alt="Werewolf website home page: Pueblo duerme over a forest, with the moon at night and the sun by day" width="100%">
+    <source media="(prefers-color-scheme: light)" srcset="assets/web/landing-dia-en.jpg">
+    <img src="assets/web/landing-noche-en.jpg" alt="Werewolf website home page: “Night falls” over a forest, with the moon at night and the sun by day" width="100%">
   </picture></a>
 </p>
 
