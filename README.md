@@ -18,7 +18,7 @@
   <a href="README.en.md">English</a>
 </p>
 
-Werewolf es un bot de Discord para jugar a Hombres Lobo sin narrador. Reparte los roles por mensaje privado, lleva la noche y el día en el canal del servidor, cuenta los votos y guarda el resultado en un ranking por servidor.
+Werewolf es un bot de Discord para jugar a Hombres Lobo sin narrador. Reparte los roles por mensaje privado, lleva la noche y el día en el canal del servidor, cuenta los votos y guarda el resultado en un ranking por servidor. Funciona en español e inglés: cada servidor elige su idioma.
 
 Este repositorio es su escaparate. El código fuente es privado.
 
