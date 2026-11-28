@@ -46,6 +46,11 @@ Este repositorio es su escaparate. El código fuente es privado.
 
 <p align="center"><sub>La web tiene fase de noche y de día; el interruptor del encabezado cambia entre ambas.</sub></p>
 
+<p align="center">
+  <a href="https://werewolfdashboard.vercel.app/roles"><img src="assets/roles/retratos.png" alt="Doce retratos en pixel art: Hombre Lobo, Vidente, Bruja, Cazador, Cupido, Caballero, Lobo Blanco, Alcalde, Ramera, Zorro, Gran Lobo y Príncipe" width="640"></a>
+  <br><sub>Cada rol tiene su retrato. Salen en la web y en los mensajes del bot.</sub>
+</p>
+
 ## Cómo es una partida
 
 1. Alguien abre el lobby con `/start` y los demás entran con `/join` o con su botón. El lobby también tiene botones de ayuda, para probar los mensajes privados y, para quien lo creó o administra, para gestionar la mesa.

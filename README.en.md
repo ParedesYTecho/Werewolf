@@ -46,6 +46,11 @@ This repository is the project's showcase. The source code is private.
 
 <p align="center"><sub>The website has a night and a day phase; the switch in the header toggles between them.</sub></p>
 
+<p align="center">
+  <a href="https://werewolfdashboard.vercel.app/en/roles"><img src="assets/roles/retratos.png" alt="Twelve pixel art portraits: Werewolf, Seer, Witch, Hunter, Cupid, Knight, White Wolf, Mayor, Harlot, Fox, Big Bad Wolf and Prince" width="640"></a>
+  <br><sub>Every role has its own portrait. They show on the website and in the bot's messages.</sub>
+</p>
+
 ## How a game works
 
 1. Someone opens the lobby with `/start` and the others join with `/join` or its button. The lobby also has buttons for help, for testing direct messages and, for its creator or an admin, for managing the table.
