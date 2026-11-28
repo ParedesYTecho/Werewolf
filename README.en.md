@@ -18,7 +18,7 @@
   <a href="README.md">Español</a>
 </p>
 
-Werewolf is a Discord bot for playing Werewolf without a narrator. It deals roles by direct message, runs night and day in the server channel, counts the votes and keeps a per-server leaderboard. The bot and its interface are in Spanish.
+Werewolf is a Discord bot for playing Werewolf without a narrator. It deals roles by direct message, runs night and day in the server channel, counts the votes and keeps a per-server leaderboard. The bot and its panel work in Spanish and English: each server picks its language.
 
 This repository is the project's showcase. The source code is private.
 
